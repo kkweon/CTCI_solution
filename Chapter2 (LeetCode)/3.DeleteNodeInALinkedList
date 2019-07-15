@@ -1,15 +1,5 @@
 #Time Complexity : O(1), Space Complexity : O(1)
 class Solution(object):
     def deleteNode(self, node):
-        prev = node
-        
-        #copy next node val to prev node
-        while node.next:
-            node.val = node.next.val
-            prev = node
-            node = node.next       
-        
-        #delete Last Node
-        prev.next = None
-        
-        
+        node.val = node.next.val
+        node.next = node.next.next
